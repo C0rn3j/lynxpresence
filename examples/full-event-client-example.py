@@ -1,10 +1,10 @@
 import asyncio
-import pypresence
+import lynxpresence
 
 CLIENT_ID = 555555555555555555
 
 loop = asyncio.get_event_loop()
-c = pypresence.Client(CLIENT_ID, loop=loop)
+c = lynxpresence.Client(CLIENT_ID, loop=loop)
 c.start()
 
 # Prompt user for authorization to do stuff with RPC scopes
@@ -12,7 +12,7 @@ auth = c.authorize(str(CLIENT_ID), ['rpc'])
 code_grant = auth['data']['code']
 
 '''
-Implement the API found here for code/token exchange: 
+Implement the API found here for code/token exchange:
 https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-access-token-exchange-example
 (NOTE: Redirect URI is needed and should be what's set in your Dev Application's OAuth2 screen)
 '''

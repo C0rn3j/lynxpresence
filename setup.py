@@ -1,16 +1,16 @@
 from setuptools import setup
-import pypresence
+import lynxpresence
 
 # Use README for the PyPI page
 with open('README.md') as f:
     long_description = f.read()
 
 # https://setuptools.readthedocs.io/en/latest/setuptools.html
-setup(name='pypresence',
-      author='qwertyquerty',
-      url='https://github.com/qwertyquerty/pypresence',
-      version=pypresence.__version__,
-      packages=['pypresence'],
+setup(name='lynxpresence',
+      author='C0rn3j',
+      url='https://github.com/C0rn3j/lynxpresence',
+      version=lynxpresence.__version__,
+      packages=['lynxpresence'],
       python_requires='>=3.9',
       platforms=['Windows', 'Linux', 'OSX'],
       zip_safe=True,
@@ -49,9 +49,3 @@ setup(name='pypresence',
             'Framework :: AsyncIO',
       ]
 )
-
-print(r"""
-___  _   _ ___  ____ ____ ____ ____ _  _ ____ ____
-|__]  \_/  |__] |__/ |___ [__  |___ |\ | |    |___
-|      |   |    |  \ |___ ___] |___ | \| |___ |___
-""")

@@ -1,7 +1,5 @@
 """
 Python RPC Client for Discord
------------------------------
-By: qwertyquerty and LewdNeko
 """
 
 from .baseclient import BaseClient
@@ -11,8 +9,8 @@ from .types import ActivityType
 from .presence import Presence, AioPresence
 
 
-__title__ = 'pypresence'
-__author__ = 'qwertyquerty'
-__copyright__ = 'Copyright 2018 - Current qwertyquerty'
+__title__ = 'lynxpresence'
+__author__ = 'C0rn3j'
+__copyright__ = 'Copyright 2018 - 2025'
 __license__ = 'MIT'
-__version__ = '4.4.0'
+__version__ = '4.4.1'

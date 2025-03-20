@@ -2,8 +2,8 @@
 
 Client Authorization Example (For using Client's methods)
 ```py
-import pypresence
-c = pypresence.Client(CLIENT_ID)
+import lynxpresence
+c = lynxpresence.Client(CLIENT_ID)
 c.start()
 auth = c.authorize(CLIENT_ID, ['rpc'])  # If you need other scopes, add them
 code_grant = auth.code
