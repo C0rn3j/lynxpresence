@@ -21,11 +21,11 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = "pypresence"
-copyright = "2025, qwertyquerty"
-author = "qwertyquerty, LewdNeko"
+project = "lynxpresence"
+copyright = "2025, C0rn3j"
+author = "C0rn3j"
 
-with open("../../pypresence/__init__.py", "r", encoding="utf8") as f:
+with open("../../lynxpresence/__init__.py", "r", encoding="utf8") as f:
     for line in f:
         if line.startswith("__version__"):
             rawRelease = line.split("=")[1].strip().strip('"').strip("'")
@@ -138,7 +138,7 @@ latex_documents = [
         master_doc,
         "pypresence.tex",
         "pypresence Documentation",
-        "qwertyquerty",
+        "C0rn3j",
         "manual",
     ),
 ]
