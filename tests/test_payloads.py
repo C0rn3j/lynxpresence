@@ -3,8 +3,8 @@
 import json
 import os
 
-from pypresence.payloads import Payload
-from pypresence.types import ActivityType, StatusDisplayType
+from lynxpresence.payloads import Payload
+from lynxpresence.types import ActivityType, StatusDisplayType
 
 
 class TestPayloadGeneration:

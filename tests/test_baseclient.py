@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from pypresence.baseclient import BaseClient
-from pypresence.exceptions import (
+from lynxpresence.baseclient import BaseClient
+from lynxpresence.exceptions import (
     ConnectionTimeout,
     InvalidArgument,
     InvalidID,
@@ -117,7 +117,7 @@ class TestBaseClientSendData:
 
     def test_send_data_with_payload_object(self, client_id):
         """Test sending data with Payload object"""
-        from pypresence.payloads import Payload
+        from lynxpresence.payloads import Payload
 
         client = BaseClient(client_id)
         client.sock_writer = Mock()

@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from pypresence import AioPresence, Presence
-from pypresence.types import ActivityType
+from lynxpresence import AioPresence, Presence
+from lynxpresence.types import ActivityType
 
 
 class TestPresenceInit:
@@ -39,7 +39,7 @@ class TestPresenceInit:
 class TestPresenceUpdate:
     """Test Presence.update() method"""
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_basic(self, mock_read_output, client_id):
         """Test basic presence update"""
         presence = Presence(client_id)
@@ -65,7 +65,7 @@ class TestPresenceUpdate:
         assert payload["args"]["activity"]["state"] == "Testing"
         assert payload["args"]["activity"]["details"] == "Test Details"
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_activity_type(self, mock_read_output, client_id):
         """Test update with activity type"""
         presence = Presence(client_id)
@@ -85,7 +85,7 @@ class TestPresenceUpdate:
 
         assert payload["args"]["activity"]["type"] == ActivityType.LISTENING.value
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_name(self, mock_read_output, client_id):
         """Test update with name parameter"""
         presence = Presence(client_id)
@@ -105,7 +105,7 @@ class TestPresenceUpdate:
 
         assert payload["args"]["activity"]["name"] == "Custom Activity Name"
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_name_and_status_display_type(
         self, mock_read_output, client_id
     ):
@@ -118,7 +118,7 @@ class TestPresenceUpdate:
 
         mock_read_output.return_value = mock_coro()
 
-        from pypresence.types import StatusDisplayType
+        from lynxpresence.types import StatusDisplayType
 
         presence.update(
             name="My Custom Name", status_display_type=StatusDisplayType.NAME
@@ -135,7 +135,7 @@ class TestPresenceUpdate:
             == StatusDisplayType.NAME.value
         )
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_name_details_and_state(self, mock_read_output, client_id):
         """Test update with name, details, and state together"""
         presence = Presence(client_id)
@@ -163,7 +163,7 @@ class TestPresenceUpdate:
 class TestPresenceClear:
     """Test Presence.clear() method"""
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_clear(self, mock_read_output, client_id):
         """Test clearing presence"""
         presence = Presence(client_id)
@@ -190,7 +190,7 @@ class TestPresenceClear:
 class TestPresenceConnect:
     """Test Presence.connect() method"""
 
-    @patch("pypresence.baseclient.BaseClient.handshake")
+    @patch("lynxpresence.baseclient.BaseClient.handshake")
     def test_connect(self, mock_handshake, client_id, mock_ipc_path):
         """Test connecting to Discord"""
         presence = Presence(client_id)
@@ -260,7 +260,7 @@ class TestAioPresence:
 class TestPresenceURLFeatures:
     """Test Presence URL features (state_url, details_url, large_url, small_url)"""
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_state_url(self, mock_read_output, client_id):
         """Test presence update with state_url parameter"""
         presence = Presence(client_id)
@@ -282,7 +282,7 @@ class TestPresenceURLFeatures:
         assert payload["args"]["activity"]["state"] == "Playing a game"
         assert payload["args"]["activity"]["state_url"] == "https://example.com/game"
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_details_url(self, mock_read_output, client_id):
         """Test presence update with details_url parameter"""
         presence = Presence(client_id)
@@ -309,7 +309,7 @@ class TestPresenceURLFeatures:
             == "https://example.com/match/12345"
         )
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_large_url(self, mock_read_output, client_id):
         """Test presence update with large_url parameter"""
         presence = Presence(client_id)
@@ -337,7 +337,7 @@ class TestPresenceURLFeatures:
         assert assets["large_text"] == "Large Image"
         assert assets["large_url"] == "https://cdn.example.com/images/large.png"
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_small_url(self, mock_read_output, client_id):
         """Test presence update with small_url parameter"""
         presence = Presence(client_id)
@@ -365,7 +365,7 @@ class TestPresenceURLFeatures:
         assert assets["small_text"] == "Small Image"
         assert assets["small_url"] == "https://cdn.example.com/images/small.png"
 
-    @patch("pypresence.baseclient.BaseClient.read_output")
+    @patch("lynxpresence.baseclient.BaseClient.read_output")
     def test_update_with_all_urls(self, mock_read_output, client_id):
         """Test presence update with all URL parameters"""
         presence = Presence(client_id)

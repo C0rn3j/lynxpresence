@@ -106,7 +106,7 @@ def mock_ipc_path(monkeypatch, tmp_path):
         return ipc_path
 
     # Patch in baseclient module where it's actually used
-    from pypresence import baseclient
+    from lynxpresence import baseclient
 
     monkeypatch.setattr(baseclient, "get_ipc_path", mock_get_ipc_path)
 

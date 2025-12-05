@@ -2,7 +2,7 @@
 
 import pytest
 
-from pypresence.exceptions import (
+from lynxpresence.exceptions import (
     ConnectionTimeout,
     DiscordError,
     DiscordNotFound,

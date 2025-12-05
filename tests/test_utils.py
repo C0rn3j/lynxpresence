@@ -5,7 +5,7 @@ import sys
 
 import pytest
 
-from pypresence.utils import get_event_loop, remove_none
+from lynxpresence.utils import get_event_loop, remove_none
 
 
 class TestRemoveNone:
@@ -132,7 +132,7 @@ class TestIPCPath:
     @pytest.mark.skipif(sys.platform != "win32", reason="Windows-specific test")
     def test_windows_ipc_path_format(self):
         """Test Windows IPC path format"""
-        from pypresence.utils import get_ipc_path
+        from lynxpresence.utils import get_ipc_path
 
         # Note: This will return None if Discord is not running
         path = get_ipc_path(0)
@@ -143,7 +143,7 @@ class TestIPCPath:
     @pytest.mark.skipif(sys.platform == "win32", reason="Unix-specific test")
     def test_unix_ipc_path_format(self):
         """Test Unix IPC path format"""
-        from pypresence.utils import get_ipc_path
+        from lynxpresence.utils import get_ipc_path
 
         # Note: This will return None if Discord is not running
         path = get_ipc_path(0)
@@ -153,7 +153,7 @@ class TestIPCPath:
 
     def test_get_ipc_path_with_pipe_number(self):
         """Test IPC path with specific pipe number"""
-        from pypresence.utils import get_ipc_path
+        from lynxpresence.utils import get_ipc_path
 
         # Just test that it doesn't crash with different pipe numbers
         for pipe in range(10):

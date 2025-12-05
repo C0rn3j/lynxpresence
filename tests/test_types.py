@@ -1,6 +1,6 @@
 """Test type enums"""
 
-from pypresence.types import ActivityType, StatusDisplayType
+from lynxpresence.types import ActivityType, StatusDisplayType
 
 
 class TestActivityType:
