@@ -2,9 +2,9 @@ import time
 
 import psutil
 
-import pypresence
+import lynxpresence
 
-rpc = pypresence.Presence("0123..")  # Put your Application ID here
+rpc = lynxpresence.Presence("0123..")  # Put your Application ID here
 data: dict | None = None
 
 rpc.connect()

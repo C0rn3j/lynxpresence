@@ -1,12 +1,12 @@
 # this example has to be rewritten, exchange_code apparently doesn't exist anymore
 
 # import asyncio
-# import pypresence
+# import lynxpresence
 
 # CLIENT_ID = 555555555555555555
 
 # loop = asyncio.get_event_loop()
-# c = pypresence.Client(CLIENT_ID, loop=loop)
+# c = lynxpresence.Client(CLIENT_ID, loop=loop)
 # c.start()
 
 # # Prompt user for authorization to do stuff with RPC scopes

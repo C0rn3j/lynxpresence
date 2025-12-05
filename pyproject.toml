@@ -3,16 +3,16 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pypresence"
+name = "lynxpresence"
 dynamic = ["version"]
 description = "Discord RPC client written in Python"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 authors = [
-    {name = "qwertyquerty"}
+    {name = "C0rn3j"}
 ]
-keywords = ["discord", "rich presence", "pypresence", "rpc", "api", "wrapper", "gamers", "chat", "irc"]
+keywords = ["discord", "rich presence", "lynxpresence", "rpc", "api", "wrapper", "gamers", "chat", "irc"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Operating System :: Microsoft :: Windows",
@@ -35,9 +35,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/qwertyquerty/pypresence"
-Repository = "https://github.com/qwertyquerty/pypresence"
-Issues = "https://github.com/qwertyquerty/pypresence/issues"
+Homepage = "https://github.com/C0rn3j/lynxpresence"
+Repository = "https://github.com/C0rn3j/lynxpresence"
+Issues = "https://github.com/C0rn3j/lynxpresence/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -54,14 +54,14 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["pypresence"]
+packages = ["lynxpresence"]
 zip-safe = true
 
 [tool.setuptools.dynamic]
-version = {attr = "pypresence.__version__"}
+version = {attr = "lynxpresence.__version__"}
 
 [tool.setuptools.package-data]
-pypresence = ["py.typed"]
+lynxpresence = ["py.typed"]
 
 [tool.black]
 extend-exclude = '''
@@ -96,7 +96,7 @@ markers = [
 asyncio_mode = "auto"
 
 [tool.mypy]
-files = ["pypresence/", "examples/"]
+files = ["lynxpresence/", "examples/"]
 exclude = ["docs/*", "tests/*"]
 ignore_missing_imports = true
 
